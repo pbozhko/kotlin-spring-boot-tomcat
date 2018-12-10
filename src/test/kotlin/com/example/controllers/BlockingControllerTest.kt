@@ -16,7 +16,7 @@ class BlockingControllerTest (@Autowired val restTemplate: TestRestTemplate) {
     @Test
     fun `should receive http status OK with 5000ms delay`() {
         val startTime = System.currentTimeMillis()
-        val response = restTemplate.getForEntity("/test", String.javaClass)
+        val response = restTemplate.getForEntity("/blocking", String.javaClass)
         val responseTime = System.currentTimeMillis() - startTime
 
         val expectedTimeout = 5000
